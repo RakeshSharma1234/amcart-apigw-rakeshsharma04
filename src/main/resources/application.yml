@@ -1,0 +1,39 @@
+spring:
+   application:
+      name: APIGateway
+   cloud:
+     gateway:
+      default-filters:
+       - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+      routes:
+      - id: search-service
+        uri: ${search-service-url}
+        predicates:
+        - Path=/product/**
+      - id: search-service
+        uri: ${search-service-url}
+        predicates:
+        - Path=/category/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+             allowed-origins: "*"
+             allowed-methods: "*"
+             allowed-headers: "*"
+       
+server:
+    port: 8082
+
+keycloak:
+  client-id: amcart-client
+  client-secret: ${clientSecret}
+  user-info-uri: ${keycloak-server-url}/realms/AMCart/protocol/openid-connect/userinfo
+  token-uri: ${keycloak-server-url}/realms/AMCart/protocol/openid-connect/token
+
+management:
+  endpoints:
+    enabled-by-default: true
+    
+logging:
+  level:
+    '[org.springframework.web]': debug
