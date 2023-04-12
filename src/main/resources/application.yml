@@ -28,7 +28,7 @@ keycloak:
   client-id: amcart-client
   client-secret: ${clientSecret}
   user-info-uri: ${keycloak-server-url}/realms/AMCart/protocol/openid-connect/userinfo
-  token-uri: ${keycloak-server-url}/realms/AMCart/protocol/openid-connect/token
+  token-uri: ${keycloak-server-internal-url}/realms/AMCart/protocol/openid-connect/token
 
 management:
   endpoints:
@@ -37,3 +37,5 @@ management:
 logging:
   level:
     '[org.springframework.web]': debug
+    '[org.springframework.cloud.gateway]': debug
+    
