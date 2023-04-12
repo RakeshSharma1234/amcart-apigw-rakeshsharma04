@@ -26,7 +26,7 @@ metadata:
   namespace: nagp-amcart-namespace
 data:
   keycloak-server-url: 'http://34.173.0.32'
-  keycloak-server-internal-url: 'http://keycloak-lb-service.nagp-amcart-namespace.svc.cluster.local'
+  keycloak-server-internal-url: 'http://keycloak-service.nagp-amcart-namespace.svc.cluster.local'
   search-service-url: 'http://search-np-service.nagp-amcart-namespace.svc.cluster.local:8081'
 
 ---
