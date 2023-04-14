@@ -25,7 +25,7 @@ metadata:
   name: apigw-config
   namespace: nagp-amcart-namespace
 data:
-  keycloak-server-url: 'http://34.173.0.32'
+  keycloak-server-url: 'http://35.225.49.73'
   keycloak-server-internal-url: 'http://keycloak-service.nagp-amcart-namespace.svc.cluster.local'
   search-service-url: 'http://search-np-service.nagp-amcart-namespace.svc.cluster.local:8081'
 
